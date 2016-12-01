@@ -29,8 +29,8 @@ var paths = {
     dest: buildDir
   },
   assets: {
-    src: sourceDir + '/assets',
-    dest: buildDir + '/assets'
+    src: sourceDir + '/game/assets',
+    dest: buildDir + '/game/assets'
   },
   js: {
     index: sourceDir + '/game/index.js',
