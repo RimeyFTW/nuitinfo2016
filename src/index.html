@@ -107,10 +107,20 @@
 				//  Our controls.
 				cursors = game.input.keyboard.createCursorKeys();
 				// Camera follow.
-				game.camera.follow(player);
+				
+				//game.camera.follow(player);
+				
 			}
 			
 			function update(){
+				if (!(cursors.left.isDown))
+				{
+					game.camera.follow(player);
+				}
+				else
+				{
+					game.camera.follow(null);
+				}
 				//  Collide the player and the stars with the platforms
 				game.physics.arcade.collide(player, platforms);
 				game.physics.arcade.collide(stars, platforms);
