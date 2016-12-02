@@ -117,9 +117,12 @@
 			}
 			
 			function update(){
-				if (!(cursors.left.isDown))
+				var calcul=(game.camera.x+game.camera.width/2);
+				console.log(game.camera.x+"  "+game.camera.y);
+				if ((cursors.right.isDown)&&(player.x>calcul))
 				{
 					game.camera.follow(player);
+					console.log("following");
 				}
 				else
 				{
