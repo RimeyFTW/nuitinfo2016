@@ -117,7 +117,7 @@
 				stars.enableBody = true;
 
 				//  Here we'll create 12 of them evenly spaced apart
-				for (var i = 0; i < 4000; i+=(20+Math.random()*100))
+				for (var i = 0; i < game.world.width; i+=(20+Math.random()*100))
 				{
 				//  Create a star inside of the 'stars' group
 				var star = stars.create(i, 0, 'star');
