@@ -21,9 +21,11 @@
 			function preload() {
 
 				game.load.image('sky', 'game/assets/background.png');
-				game.load.image('ground', 'game/assets/platform.png');
+				game.load.image('ground', 'game/assets/floor.png');
+				game.load.image('platform', 'game/assets/light_platform.png');
 				game.load.image('star', 'game/assets/star.png');
-				game.load.spritesheet('dude', 'game/assets/dude.png', 32, 48);
+				game.load.spritesheet('dude', 'game/assets/character.png', 40, 82);
+				//game.load.spritesheet('dude', 'game/assets/dude.png', 32, 48);
 
 			}
 			
@@ -55,20 +57,21 @@
 				var ground = platforms.create(0, game.world.height - 64, 'ground');
 
 				//  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-				ground.scale.setTo(2, 2);
+				ground.scale.setTo(2, 3);
 
 				//  This stops it from falling away when you jump on it
 				ground.body.immovable = true;
 
 				//  Now let's create two ledges
-				var ledge = platforms.create(400, 400, 'ground');
+				var ledge = platforms.create(400, 400, 'platform');
 				ledge.body.immovable = true;
 
-				ledge = platforms.create(-150, 250, 'ground');
+				ledge = platforms.create(-150, 250, 'platform');
 				ledge.body.immovable = true;
 
 				// The player and its settings
-				player = game.add.sprite(32, game.world.height - 150, 'dude');
+				player = game.add.sprite(40, game.world.height - 200, 'dude');
+				//player = game.add.sprite(32, game.world.height - 200, 'dude');
 
 				//  We need to enable physics on the player
 				game.physics.arcade.enable(player);
