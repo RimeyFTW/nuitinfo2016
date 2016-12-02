@@ -20,7 +20,7 @@
 
 			function preload() {
 
-				game.load.image('sky', 'game/assets/background.png');
+				game.load.image('sky', 'game/assets/background_large.png');
 				game.load.image('ground', 'game/assets/floor.png');
 				game.load.image('platform', 'game/assets/platform.png');
 				game.load.image('dark', 'game/assets/dark_platform.png');
@@ -118,16 +118,16 @@
 				stars.enableBody = true;
 
 				//  Here we'll create 12 of them evenly spaced apart
-				for (var i = 0; i < 12; i++)
+				for (var i = 0; i < game.world.width; i+=(20+Math.random()*100))
 				{
 				//  Create a star inside of the 'stars' group
-				var star = stars.create(i * 70, 0, 'star');
+				var star = stars.create(i, 0, 'star');
 
 				//  Let gravity do its thing
 				star.body.gravity.y = 300;
 
 				//  This just gives each star a slightly random bounce value
-				star.body.bounce.y = 0.7 + Math.random() * 0.2;
+				star.body.bounce.y = Math.random() * 0.4;
 				}
 
 				//  The score
