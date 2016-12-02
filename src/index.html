@@ -22,7 +22,8 @@
 
 				game.load.image('sky', 'game/assets/background.png');
 				game.load.image('ground', 'game/assets/floor.png');
-				game.load.image('platform', 'game/assets/light_platform.png');
+				game.load.image('light', 'game/assets/light_platform.png');
+				game.load.image('dark', 'game/assets/dark_platform.png');
 				game.load.image('star', 'game/assets/star.png');
 				game.load.spritesheet('dude', 'game/assets/character.png', 40, 82);
 				//game.load.spritesheet('dude', 'game/assets/dude.png', 32, 48);
@@ -57,16 +58,16 @@
 				var ground = platforms.create(0, game.world.height - 64, 'ground');
 
 				//  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-				ground.scale.setTo(2, 3);
+				ground.scale.setTo(2, 2);
 
 				//  This stops it from falling away when you jump on it
 				ground.body.immovable = true;
 
 				//  Now let's create two ledges
-				var ledge = platforms.create(400, 400, 'platform');
+				var ledge = platforms.create(400, 400, 'light');
 				ledge.body.immovable = true;
 
-				ledge = platforms.create(-150, 250, 'platform');
+				ledge = platforms.create(-150, 250, 'dark');
 				ledge.body.immovable = true;
 
 				// The player and its settings
@@ -77,8 +78,8 @@
 				game.physics.arcade.enable(player);
 
 				//  Player physics properties. Give the little guy a slight bounce.
-				player.body.bounce.y = 0.2;
-				player.body.gravity.y = 400;
+				player.body.bounce.y = 0;
+				player.body.gravity.y = 500;
 				player.body.collideWorldBounds = true;
 
 				//  Our two animations, walking left and right.
