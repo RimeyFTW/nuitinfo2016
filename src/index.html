@@ -69,6 +69,7 @@
 		
 				ledge = platforms.create(1000, 415, 'platform');
 				ledge.body.immovable = true;
+
 				var space=1000+ledge.width/2;
 				//Escalier (podium)
 				ledge = platforms.create(space,game.world.height - 96,'platform');
@@ -93,6 +94,16 @@
 				ledge=platforms.create(space+(2)*ledge.width,250,'platform');
 				ledge.body.immovable=true;
 				
+				space=space+5*ledge.width;
+				//Escalier (podium)
+				ledge = platforms.create(space,game.world.height - 96,'platform');
+				ledge.body.immovable = true;	
+				ledge=platforms.create(space+ledge.width/2,game.world.height-128,'platform');
+				ledge.body.immovable=true;
+				space += ledge.width/2;
+				ledge = platforms.create(space+ledge.width/2,game.world.height-96,'platform');
+				ledge.body.immovable=true;
+
 
 
 				// The player and its settings
@@ -134,11 +145,8 @@
 				scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fff' });
 				scoreText.fixedToCamera = true;
 				//  Our controls.
-				cursors = game.input.keyboard.createCursorKeys();
-				// Camera follow.
+				cursors = game.input.keyboard.createCursorKeys();	
 				
-				//game.camera.follow(player);
-				console.log(ledge.width);	
 			}
 			
 			function update(){
@@ -146,7 +154,6 @@
 				if ((cursors.right.isDown)&&(player.x>calcul))
 				{
 					game.camera.follow(player);
-					console.log("following");
 				}
 				else
 				{
