@@ -41,7 +41,7 @@
 			var score = 0;
 			var scoreText;
 			var flags;
-			
+			var flag;
 			function create(){
 				//  We're going to be using physics, so enable the Arcade Physics system
 				game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -64,7 +64,7 @@
 				flags.enableBody=true;
 
 				// End flag
-				var flag = flags.create(game.world.width-200,game.world.height-200,'flag');
+				flag = flags.create(game.world.width-200,game.world.height-200,'flag');
 				//  Scale it to fit the width of the game (the original sprite is 400x32 in size)
 				ground.scale.setTo(2, 2);
 
@@ -173,6 +173,13 @@
 					player.x=game.camera.x;
 				}
 
+				// Traitement après le drapeau !
+				if (player.x>=flag.x)
+				{
+					nul;	
+				}
+
+	
 				//  Collide the player and the stars with the platforms
 				game.physics.arcade.collide(player, platforms);
 				game.physics.arcade.collide(stars, platforms);
