@@ -64,32 +64,33 @@
 				ground.body.immovable = true;
 
 				//  Now let's create two ledges
-				var ledge = platforms.create(400, 410, 'light');
+				var ledge = platforms.create(400, 415, 'platform');
 				ledge.body.immovable = true;
 
-				ledge = platforms.create(-150, 250, 'dark');
+				ledge = platforms.create(-150, 250, 'platform');
 				ledge.body.immovable = true;
 				
-				//ledge = platforms.create(1000, 415, 'light');
-				//ledge.body.immovable = true;
-				
+				ledge = platforms.create(1000, 415, 'platform');
+				ledge.body.immovable = true;
+				var space=1000+ledge.width;
 				//Escalier (podium)
-				ledge = platforms.create(1000,game.world.height - 96,'dark');
+				ledge = platforms.create(space,game.world.height - 96,'platform');
 				ledge.body.immovable = true;	
-				ledge=platforms.create(1200,game.world.height-128,'light');
+				ledge=platforms.create(space+ledge.width/2,game.world.height-128,'platform');
 				ledge.body.immovable=true;
-				ledge = platforms.create(1400,game.world.height-96,'dark');
+				space += ledge.width/2;
+				ledge = platforms.create(space+ledge.width/2,game.world.height-96,'platform');
 				ledge.body.immovable=true;
 
 
 				//Escalier air (jumpforlife)
-				ledge = platforms.create(1950,415,'light');
+				ledge = platforms.create(1950,415,'platform');
 				ledge.body.immovable=true;
 
-				ledge = platforms.create(2450,350,'dark');
+				ledge = platforms.create(2450,350,'platform');
 				ledge.body.immovable=true;
 
-				ledge=platforms.create(2900,250,'light');
+				ledge=platforms.create(2900,250,'platform');
 				ledge.body.immovable=true;
 
 
@@ -136,12 +137,11 @@
 				// Camera follow.
 				
 				//game.camera.follow(player);
-				
+				console.log(ledge.width);	
 			}
 			
 			function update(){
 				var calcul=(game.camera.x+game.camera.width/2);
-				console.log(game.camera.x+"  "+game.camera.y);
 				if ((cursors.right.isDown)&&(player.x>calcul))
 				{
 					game.camera.follow(player);
