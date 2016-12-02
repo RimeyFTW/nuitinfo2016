@@ -128,6 +128,12 @@
 				{
 					game.camera.follow(null);
 				}
+				
+				if (player.x<game.camera.x)
+				{
+					player.x=game.camera.x;
+				}
+
 				//  Collide the player and the stars with the platforms
 				game.physics.arcade.collide(player, platforms);
 				game.physics.arcade.collide(stars, platforms);
