@@ -66,13 +66,10 @@
 				//  Now let's create two ledges
 				var ledge = platforms.create(400, 415, 'platform');
 				ledge.body.immovable = true;
-
-				ledge = platforms.create(-150, 250, 'platform');
-				ledge.body.immovable = true;
-				
+		
 				ledge = platforms.create(1000, 415, 'platform');
 				ledge.body.immovable = true;
-				var space=1000+ledge.width;
+				var space=1000+ledge.width/2;
 				//Escalier (podium)
 				ledge = platforms.create(space,game.world.height - 96,'platform');
 				ledge.body.immovable = true;	
@@ -82,22 +79,26 @@
 				ledge = platforms.create(space+ledge.width/2,game.world.height-96,'platform');
 				ledge.body.immovable=true;
 
-
+				space=1950;
 				//Escalier air (jumpforlife)
-				ledge = platforms.create(1950,415,'platform');
+				ledge = platforms.create(space,415,'platform');
 				ledge.body.immovable=true;
 
-				ledge = platforms.create(2450,350,'platform');
+				ledge = platforms.create(space+(4/3)*ledge.width,350,'platform');
 				ledge.body.immovable=true;
-
-				ledge=platforms.create(2900,250,'platform');
+				space+=(4/3)*ledge.width;
+				ledge=platforms.create(space+(4/3)*ledge.width,250,'platform');
 				ledge.body.immovable=true;
+				space+=(4/3)*ledge.width;
+				ledge=platforms.create(space+(2)*ledge.width,250,'platform');
+				ledge.body.immovable=true;
+				
 
 
 				// The player and its settings
 				player = game.add.sprite(40, game.world.height - 200, 'dude');
 				//player = game.add.sprite(32, game.world.height - 200, 'dude');
-
+				
 				//  We need to enable physics on the player
 				game.physics.arcade.enable(player);
 
