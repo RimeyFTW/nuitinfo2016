@@ -36,7 +36,9 @@
 			var player;
 			var platforms;
 			var cursors;
+			var flag;
 
+			var nbStars = 0;
 			var stars;
 			var score = 0;
 			var scoreText;
@@ -65,6 +67,8 @@
 
 				//  This stops it from falling away when you jump on it
 				ground.body.immovable = true;
+
+				flag = platforms.create(game.world.width - 40, game.world.height - 200, 'flag');
 
 				//  Now let's create two ledges
 				var ledge = platforms.create(400, 415, 'platform');
@@ -134,6 +138,7 @@
 				//  Here we'll create 12 of them evenly spaced apart
 				for (var i = 0; i < game.world.width; i+=(20+Math.random()*100))
 				{
+					nbStars++;
 				//  Create a star inside of the 'stars' group
 				var star = stars.create(i, 0, 'star');
 
@@ -205,13 +210,30 @@
 				{
 					player.body.velocity.y = -350;
 				}
+
+
+				if (player.x >= flag.x){
+					fin();
+				}
+
+			}
+
+			function fin(){
+				if (nbStars > 0) //GAME OVER
+				{
+
+				}
+				else	//GAGNE
+				{
+
+				}
 			}
 			
 			function collectStar (player, star) {
 
 				// Removes the star from the screen
 				star.kill();
-
+				nbStars--;
 				//  Add and update the score
 				score += 10;
 				scoreText.text = 'Score: ' + score;
