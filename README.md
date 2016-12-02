@@ -1,8 +1,8 @@
 ## Synopsis
 
-Repository of a workshop to learn web game development with [PhaserJS](http://phaser.io/).
+Repository of a workshop developped during the "nuit de l'info 2016"
 
-The game to develop will be an [Arkanoid](https://en.wikipedia.org/wiki/Arkanoid) like.
+The game developped is a platform game
 
 ### Install
 
@@ -10,11 +10,11 @@ Git and Node.js are required
 
 1. Clone sources
 
-	git clone https://github.com/alvinberthelot/phaser-example-arkanoid
+	git clone https://github.com/RimeyFTW/nuitinfo2016.git
 
 2. Goto directory
 
-	cd phaser-example-arkanoid
+	cd nuitinfo2016
 
 3. Install dependencies
 
