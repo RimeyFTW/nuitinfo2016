@@ -12,10 +12,28 @@
 			text-align:center;
 			background-color : #1a2c67;
 		}
+		
+		#victory{
+			width : 100%;
+			margin:0;
+			background-color : black;
+			opacity: 0.5;
+			color: white;
+			font-size : 30px;
+			padding-top : 100px;
+			padding-bottom : 100px;
+			display : none;
+			text-align : center;
+			float:left;
+		}
     </style>
   </head>
 	<body>
     <img src="game/assets/got_title.png"/>
+	
+		<div id="victory">
+		
+		</div>
 	
 		<script type="text/javascript">
 		
@@ -176,7 +194,10 @@
 				// Traitement après le drapeau !
 				if (player.x>=flag.x)
 				{
-					nul;	
+					document.getElementById("victory").style.display = 'block';
+					document.getElementById("victory").innerHTML = 'You have harvested ' + score/10 + " papers ! Good job";
+					game.camera.fade(0x000,4000);
+					// On fait freeze le jeu volontairement :-) 
 				}
 
 	
