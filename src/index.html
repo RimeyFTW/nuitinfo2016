@@ -43,7 +43,7 @@
 				//  We're going to be using physics, so enable the Arcade Physics system
 				game.physics.startSystem(Phaser.Physics.ARCADE);
 				
-				game.world.setBounds(0,0,3000,600);
+				game.world.setBounds(0,0,4000,600);
 
 				//  A simple background for our game
 				game.add.sprite(0, 0, 'sky');
@@ -56,7 +56,7 @@
 
 				// Here we create the ground.
 				var ground = platforms.create(0, game.world.height - 64, 'ground');
-
+				
 				//  Scale it to fit the width of the game (the original sprite is 400x32 in size)
 				ground.scale.setTo(2, 2);
 
@@ -64,11 +64,34 @@
 				ground.body.immovable = true;
 
 				//  Now let's create two ledges
-				var ledge = platforms.create(400, 400, 'light');
+				var ledge = platforms.create(400, 410, 'light');
 				ledge.body.immovable = true;
 
 				ledge = platforms.create(-150, 250, 'dark');
 				ledge.body.immovable = true;
+				
+				//ledge = platforms.create(1000, 415, 'light');
+				//ledge.body.immovable = true;
+				
+				//Escalier (podium)
+				ledge = platforms.create(1000,game.world.height - 96,'dark');
+				ledge.body.immovable = true;	
+				ledge=platforms.create(1200,game.world.height-128,'light');
+				ledge.body.immovable=true;
+				ledge = platforms.create(1400,game.world.height-96,'dark');
+				ledge.body.immovable=true;
+
+
+				//Escalier air (jumpforlife)
+				ledge = platforms.create(1950,415,'light');
+				ledge.body.immovable=true;
+
+				ledge = platforms.create(2450,350,'dark');
+				ledge.body.immovable=true;
+
+				ledge=platforms.create(2900,250,'light');
+				ledge.body.immovable=true;
+
 
 				// The player and its settings
 				player = game.add.sprite(40, game.world.height - 200, 'dude');
