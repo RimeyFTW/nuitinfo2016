@@ -1,5 +1,5 @@
 
-	var game = new Phaser.Game(1500, 600	, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+	var game = new Phaser.Game(document.body.offsetWidth, 600	, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 	function preload() {
 
@@ -197,3 +197,4 @@
 		scoreText.text = 'Score: ' + score;
 
 	}
+
