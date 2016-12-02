@@ -20,7 +20,7 @@
 
 			function preload() {
 
-				game.load.image('sky', 'game/assets/background_large.png');
+				game.load.image('sky', 'game/assets/background_medium.png');
 				game.load.image('ground', 'game/assets/floor.png');
 				game.load.image('platform', 'game/assets/platform.png');
 				game.load.image('dark', 'game/assets/dark_platform.png');
@@ -43,7 +43,7 @@
 				//  We're going to be using physics, so enable the Arcade Physics system
 				game.physics.startSystem(Phaser.Physics.ARCADE);
 				
-				game.world.setBounds(0,0,6000,600);
+				game.world.setBounds(0,0,4280,600);
 
 				//  A simple background for our game
 				game.add.sprite(0, 0, 'sky');
