@@ -30,7 +30,7 @@
 				game.load.image('star', 'game/assets/star.png');
 				game.load.spritesheet('dude', 'game/assets/character.png', 40, 82);
 				//game.load.spritesheet('dude', 'game/assets/dude.png', 32, 48);
-
+				game.load.image('flag','game/assets/flag.png');
 			}
 			
 			var player;
@@ -42,7 +42,7 @@
 			var stars;
 			var score = 0;
 			var scoreText;
-
+			var flags;
 			
 			function create(){
 				//  We're going to be using physics, so enable the Arcade Physics system
@@ -62,6 +62,11 @@
 				// Here we create the ground.
 				var ground = platforms.create(0, game.world.height - 64, 'ground');
 				
+				flags=game.add.group();
+				flags.enableBody=true;
+
+				// End flag
+				var flag = flags.create(game.world.width-200,game.world.height-200,'flag');
 				//  Scale it to fit the width of the game (the original sprite is 400x32 in size)
 				ground.scale.setTo(2, 2);
 
