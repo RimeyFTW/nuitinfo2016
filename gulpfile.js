@@ -35,7 +35,7 @@ var paths = {
   js: {
     index: sourceDir + '/game/index.js',
     bundle: 'bundle-' + pkg.name + '.js',
-    dest: buildDir
+    dest: buildDir + '/game/index.js'
   }
 }
 
